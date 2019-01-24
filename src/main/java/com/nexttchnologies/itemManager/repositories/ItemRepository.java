@@ -1,4 +1,4 @@
-package com.nexttchnologies.itemManager.controllers.repositories;
+package com.nexttchnologies.itemManager.repositories;
 
 import org.springframework.data.repository.CrudRepository;
 
