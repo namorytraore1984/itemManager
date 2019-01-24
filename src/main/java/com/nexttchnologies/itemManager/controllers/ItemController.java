@@ -7,11 +7,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.nexttchnologies.itemManager.controllers.services.ItemService;
 import com.nexttchnologies.itemManager.models.Item;
+import com.nexttchnologies.itemManager.services.ItemService;
 
 @RestController
 public class ItemController 
@@ -20,9 +19,9 @@ public class ItemController
 	private ItemService itemService;
 	
 	@RequestMapping(value = "/items", method = RequestMethod.POST)
-	public void createItem(@RequestBody Item item)
+	public Item createItem(@RequestBody Item item)
 	{
-		itemService.createItem(item);
+		return itemService.createItem(item);
 	}
 	
 	@RequestMapping(value = "/items/{id}", method = RequestMethod.GET)
